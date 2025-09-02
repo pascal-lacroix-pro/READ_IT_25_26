@@ -9,14 +9,11 @@
         </form>
     </div>
     <div class="sidebar-box ftco-animate">
-        <div class="categories">
-            <h3>Categories</h3>
-            <li><a href="#">Illustration <span class="ion-ios-arrow-forward"></span></a></li>
-            <li><a href="#">Branding <span class="ion-ios-arrow-forward"></span></a></li>
-            <li><a href="#">Application <span class="ion-ios-arrow-forward"></span></a></li>
-            <li><a href="#">Design <span class="ion-ios-arrow-forward"></span></a></li>
-            <li><a href="#">Marketing <span class="ion-ios-arrow-forward"></span></a></li>
-        </div>
+        <?php
+        include_once '../app/models/CategoriesModel.php';
+        $categories = \App\Models\CategoriesModel\findAll($conn);
+        ?>
+        <?php include '../app/views/categories/_index.php'; ?>
     </div>
 
     <div class="sidebar-box ftco-animate">
