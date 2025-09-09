@@ -22,6 +22,8 @@ function loginAction(PDO $conn, array $data)
 
     // Si on a un user on redirige vers le backoffice
     if ($user):
+        // On lui met un badge et on le fait entrer
+        $_SESSION['user'] = $user;
         header('Location: ' . ADMIN_BASE_URL . 'dashboard');
     // Sinon on redirige vers le formulaire de connexion
     else:
