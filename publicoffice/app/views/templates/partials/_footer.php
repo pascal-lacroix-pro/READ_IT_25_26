@@ -12,7 +12,9 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md"></div>
+            <div class="col-md">
+                <a href="users/login-form">Connection</a>
+            </div>
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4 ml-md-5">
                     <h2 class="ftco-heading-2">Information</h2>
