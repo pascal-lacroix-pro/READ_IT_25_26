@@ -2,7 +2,7 @@
 
 namespace App\Controllers\UsersController;
 
-use \PDO;
+use \PDO, \App\Models\UsersModel;
 
 function logoutAction()
 {
@@ -10,4 +10,15 @@ function logoutAction()
     // On redirige vers la connexion
     unset($_SESSION['user']);
     header('Location: ' . PUBLIC_BASE_URL . 'users/login-form');
+}
+
+function indexAction(PDO $conn)
+{
+    include_once '../app/models/usersModel.php';
+    $users = UsersModel\findAll($conn);
+    global $title, $content;
+    $title = "Users List";
+    ob_start();
+    include '../app/views/users/index.php';
+    $content = ob_get_clean();
 }
