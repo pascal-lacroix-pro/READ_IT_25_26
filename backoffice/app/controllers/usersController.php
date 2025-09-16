@@ -22,3 +22,12 @@ function indexAction(PDO $conn)
     include '../app/views/users/index.php';
     $content = ob_get_clean();
 }
+
+function newAction()
+{
+    global $title, $content;
+    $title = "Add a user";
+    ob_start();
+    include '../app/views/users/new.php';
+    $content = ob_get_clean();
+}
