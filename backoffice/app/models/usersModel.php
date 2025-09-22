@@ -26,6 +26,6 @@ function create(PDO $conn, array $data)
     $rs->bindValue(':firstname', $data['firstname'], PDO::PARAM_STR);
     $rs->bindValue(':lastname', $data['lastname'], PDO::PARAM_STR);
     $rs->bindValue(':email', $data['email'], PDO::PARAM_STR);
-    $rs->bindValue(':password', $data['password'], PDO::PARAM_STR);
+    $rs->bindValue(':password', password_hash($data['password'], PASSWORD_DEFAULT), PDO::PARAM_STR);
     return $rs->execute();
 }
